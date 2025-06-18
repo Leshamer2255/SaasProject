@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - Smart Budget Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color-schemes.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/demo-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">FinTrack</a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="#" class="btn btn-outline">Log In</a>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="https://placehold.co/64x64/2196F3/FFFFFF/png?text=Analytics" alt="Analytics" class="feature-icon">
+                <h3>Real-time Analytics</h3>
+                <p>Get instant insights into your financial data with our powerful analytics tools.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://placehold.co/64x64/2196F3/FFFFFF/png?text=Security" alt="Security" class="feature-icon">
+                <h3>Secure Platform</h3>
+                <p>Your data is protected with enterprise-grade security and encryption.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://placehold.co/64x64/2196F3/FFFFFF/png?text=Reports" alt="Reports" class="feature-icon">
+                <h3>Automated Reports</h3>
+                <p>Generate detailed reports automatically and share them with your team.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <h2>Choose Your Plan</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <div class="price">$9<span>/month</span></div>
+                <ul class="pricing-features">
+                    <li>Basic expense tracking</li>
+                    <li>Monthly reports</li>
+                    <li>3 integrations</li>
+                </ul>
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-text" data-modal="pricing-details">View Details</button>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Pro</h3>
+                <div class="price">$29<span>/month</span></div>
+                <ul class="pricing-features">
+                    <li>Advanced analytics</li>
+                    <li>Unlimited categories</li>
+                    <li>Bank integration</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">$99<span>/month</span></div>
+                <ul class="pricing-features">
+                    <li>Everything in Pro</li>
+                    <li>Team management</li>
+                    <li>Custom reports</li>
+                    <li>API access</li>
+                </ul>
+                <button class="btn btn-outline">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"FinTrack has transformed how we manage our finances. The insights and reports are invaluable."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://placehold.co/60x60/2196F3/FFFFFF/png?text=JD" alt="John Doe" class="author-image">
+                    <div class="author-info">
+                        <h4>John Doe</h4>
+                        <p>CEO, TechCorp</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The best financial management tool we've used. Simple yet powerful."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://placehold.co/60x60/2196F3/FFFFFF/png?text=JS" alt="Jane Smith" class="author-image">
+                    <div class="author-info">
+                        <h4>Jane Smith</h4>
+                        <p>CFO, StartupX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonials-controls">
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <div class="testimonials-dots"></div>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="statistics-grid">
+            <div class="stat-card">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$2M+</div>
+                <div class="stat-label">Money Managed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4.9/5</div>
+                <div class="stat-label">User Rating</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Styles Section -->
+    <section class="demo-section">
+        <div class="demo-container">
+            <h2>Style Variations</h2>
+            <p>Explore different themes and layouts for your website</p>
+            
+            <div class="demo-grid">
+                <div class="demo-card theme-modern">
+                    <h3>Modern Theme</h3>
+                    <p>A clean and contemporary design with rounded corners and subtle shadows</p>
+                    <a href="demos/modern.html" class="btn btn-primary">View Theme</a>
+                </div>
+                
+                <div class="demo-card theme-minimal">
+                    <h3>Minimal Theme</h3>
+                    <p>Simple and elegant design with minimal distractions</p>
+                    <a href="demos/minimal.html" class="btn btn-primary">View Theme</a>
+                </div>
+                
+                <div class="demo-card theme-dark">
+                    <h3>Dark Theme</h3>
+                    <p>Eye-friendly dark mode with vibrant accents</p>
+                    <a href="demos/dark.html" class="btn btn-primary">View Theme</a>
+                </div>
+
+                <div class="demo-card theme-gradient">
+                    <h3>Gradient Theme</h3>
+                    <p>Vibrant and modern design with beautiful gradients</p>
+                    <a href="demos/gradient.html" class="btn btn-primary">View Theme</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FinTrack</h3>
+                <p>Smart budget management for modern businesses. Track expenses, manage finances, and grow your business with our powerful tools.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FinTrack. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/testimonials.js"></script>
+</body>
+</html> 

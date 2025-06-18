@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - FAQ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">FinTrack</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="#" class="btn btn-outline">Log In</a>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about FinTrack.</p>
+
+            <!-- Search Bar -->
+            <div class="faq-search">
+                <input type="text" id="faqSearch" placeholder="Search questions...">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="faq-categories">
+                <button class="category-btn active" data-category="all">All Questions</button>
+                <button class="category-btn" data-category="general">General</button>
+                <button class="category-btn" data-category="technical">Technical</button>
+                <button class="category-btn" data-category="billing">Billing</button>
+                <button class="category-btn" data-category="security">Security</button>
+            </div>
+
+            <!-- FAQ List -->
+            <div class="faq-list">
+                <!-- General Questions -->
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <h3>What is FinTrack?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>FinTrack is a comprehensive financial management platform designed to help businesses streamline their budgeting, reporting, and analytics processes. It provides real-time insights and automated tools to make financial management more efficient.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <h3>How do I get started with FinTrack?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Getting started is easy! Simply sign up for an account, choose your plan, and follow our guided setup process. We'll help you connect your financial accounts and customize your dashboard to meet your specific needs.</p>
+                    </div>
+                </div>
+
+                <!-- Technical Questions -->
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question">
+                        <h3>What are the system requirements?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>FinTrack is a web-based platform that works on any modern browser. We recommend using the latest versions of Chrome, Firefox, Safari, or Edge. You'll need a stable internet connection and a valid FinTrack account to access the platform.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question">
+                        <h3>Can I integrate FinTrack with other software?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! FinTrack offers seamless integration with popular accounting software, CRM systems, and other business tools. Check our documentation for a complete list of supported integrations and setup instructions.</p>
+                    </div>
+                </div>
+
+                <!-- Billing Questions -->
+                <div class="faq-item" data-category="billing">
+                    <div class="faq-question">
+                        <h3>What payment methods do you accept?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers. For enterprise customers, we also offer custom payment terms.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="billing">
+                    <div class="faq-question">
+                        <h3>Can I change my subscription plan?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can upgrade or downgrade your subscription at any time. Changes will be reflected in your next billing cycle. Contact our support team if you need assistance with plan changes.</p>
+                    </div>
+                </div>
+
+                <!-- Security Questions -->
+                <div class="faq-item" data-category="security">
+                    <div class="faq-question">
+                        <h3>How secure is my financial data?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We take security seriously. FinTrack uses bank-level encryption, multi-factor authentication, and regular security audits to protect your data. All data is stored in secure, compliant data centers with 24/7 monitoring.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="security">
+                    <div class="faq-question">
+                        <h3>What happens to my data if I cancel my subscription?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your data remains accessible for 30 days after cancellation. During this period, you can export your data or reactivate your subscription. After 30 days, your data will be securely deleted from our systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FinTrack</h3>
+                    <p>Smart budget management for modern businesses. Streamline your finances and make better decisions with our powerful tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FinTrack. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/faq.js"></script>
+</body>
+</html> 

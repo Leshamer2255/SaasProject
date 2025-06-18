@@ -1,0 +1,370 @@
+/* Documentation Styles */
+.documentation-section {
+    padding: 4rem 2rem;
+    background: var(--bg-color);
+}
+
+.documentation-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.documentation-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.documentation-section > .container > p {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Documentation Grid */
+.docs-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Sidebar */
+.docs-sidebar {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.docs-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.docs-nav h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.docs-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.docs-nav a i {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.docs-nav a:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.docs-nav a:hover i {
+    opacity: 1;
+}
+
+.docs-nav a.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.docs-nav a.active i {
+    opacity: 1;
+}
+
+/* Main Content */
+.docs-content {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.docs-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.docs-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.docs-content h3 {
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1.2rem;
+    color: var(--text-color);
+}
+
+.docs-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.docs-content ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.docs-content li {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Code Blocks */
+.code-block {
+    background: var(--bg-dark);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+    position: relative;
+}
+
+.code-block::before {
+    content: 'Code';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 0 var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.code-block pre {
+    margin: 0;
+    color: var(--text-light);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Note Blocks */
+.note-block {
+    background: rgba(var(--primary-color-rgb), 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.note-block h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.note-block p {
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .docs-grid {
+        grid-template-columns: 250px 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .documentation-section {
+        padding: 2rem 1rem;
+    }
+
+    .documentation-section h1 {
+        font-size: 2rem;
+    }
+
+    .docs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .docs-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .docs-content {
+        padding: 1.5rem;
+    }
+
+    .docs-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .docs-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Theme Grid */
+.theme-grid,
+.layout-grid,
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.theme-card,
+.layout-card,
+.component-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.theme-card:hover,
+.layout-card:hover,
+.component-card:hover {
+    transform: translateY(-5px);
+}
+
+.theme-preview,
+.layout-preview {
+    height: 120px;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+/* FAQ */
+.faq-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.faq-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* API Reference */
+.api-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.api-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+/* Syntax Highlighting */
+.hljs-keyword {
+    color: #569CD6;
+}
+
+.hljs-string {
+    color: #CE9178;
+}
+
+.hljs-comment {
+    color: #6A9955;
+}
+
+.hljs-function {
+    color: #DCDCAA;
+}
+
+.hljs-number {
+    color: #B5CEA8;
+}
+
+/* Scrollbar Styling */
+.docs-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.docs-sidebar::-webkit-scrollbar-track {
+    background: var(--card-background);
+}
+
+.docs-sidebar::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Active Section Highlight */
+.docs-content section:target {
+    animation: highlight 2s ease-out;
+}
+
+@keyframes highlight {
+    0% {
+        background: rgba(var(--primary-color-rgb), 0.1);
+    }
+    100% {
+        background: transparent;
+    }
+} 

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - Documentation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/documentation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">FinTrack</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="documentation.html" class="active">Documentation</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="#" class="btn btn-outline">Log In</a>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Documentation Section -->
+    <section class="documentation-section">
+        <div class="container">
+            <h1>Documentation</h1>
+            <p>Everything you need to know about using FinTrack effectively. From getting started to advanced features.</p>
+
+            <div class="docs-grid">
+                <!-- Sidebar -->
+                <div class="docs-sidebar">
+                    <div class="docs-nav">
+                        <h3>Getting Started</h3>
+                        <a href="#introduction" class="active"><i class="fas fa-book"></i> Introduction</a>
+                        <a href="#installation"><i class="fas fa-download"></i> Installation</a>
+                        <a href="#quick-start"><i class="fas fa-rocket"></i> Quick Start</a>
+
+                        <h3>Core Features</h3>
+                        <a href="#dashboard"><i class="fas fa-chart-line"></i> Dashboard</a>
+                        <a href="#budgeting"><i class="fas fa-wallet"></i> Budgeting</a>
+                        <a href="#reports"><i class="fas fa-file-alt"></i> Reports</a>
+                        <a href="#analytics"><i class="fas fa-chart-bar"></i> Analytics</a>
+
+                        <h3>Advanced</h3>
+                        <a href="#api"><i class="fas fa-code"></i> API Reference</a>
+                        <a href="#integrations"><i class="fas fa-plug"></i> Integrations</a>
+                        <a href="#customization"><i class="fas fa-cog"></i> Customization</a>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="docs-content">
+                    <!-- Introduction -->
+                    <section id="introduction">
+                        <h2>Introduction to FinTrack</h2>
+                        <p>FinTrack is a powerful financial management platform designed to help businesses of all sizes streamline their budgeting, reporting, and analytics processes. This documentation will guide you through all the features and capabilities of FinTrack.</p>
+                        
+                        <div class="note-block">
+                            <h4><i class="fas fa-lightbulb"></i> Pro Tip</h4>
+                            <p>Make sure to check out our video tutorials for a more visual learning experience.</p>
+                        </div>
+
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Real-time financial analytics and reporting</li>
+                            <li>Automated budget tracking and management</li>
+                            <li>Customizable dashboards and reports</li>
+                            <li>Integration with popular accounting software</li>
+                            <li>Advanced data visualization tools</li>
+                        </ul>
+                    </section>
+
+                    <!-- Installation -->
+                    <section id="installation">
+                        <h2>Installation Guide</h2>
+                        <p>Follow these steps to get FinTrack up and running on your system.</p>
+
+                        <h3>System Requirements</h3>
+                        <ul>
+                            <li>Modern web browser (Chrome, Firefox, Safari, Edge)</li>
+                            <li>Internet connection</li>
+                            <li>Valid FinTrack account</li>
+                        </ul>
+
+                        <h3>Installation Steps</h3>
+                        <div class="code-block">
+                            <pre>
+# Install FinTrack CLI
+npm install -g fintrack-cli
+
+# Initialize your project
+fintrack init
+
+# Configure your settings
+fintrack config set api-key YOUR_API_KEY</pre>
+                        </div>
+
+                        <div class="note-block">
+                            <h4><i class="fas fa-exclamation-circle"></i> Important</h4>
+                            <p>Make sure to keep your API key secure and never share it publicly.</p>
+                        </div>
+                    </section>
+
+                    <!-- Quick Start -->
+                    <section id="quick-start">
+                        <h2>Quick Start Guide</h2>
+                        <p>Get up and running with FinTrack in minutes.</p>
+
+                        <h3>Basic Setup</h3>
+                        <ol>
+                            <li>Create your account</li>
+                            <li>Set up your organization profile</li>
+                            <li>Connect your financial accounts</li>
+                            <li>Configure your dashboard</li>
+                        </ol>
+
+                        <div class="code-block">
+                            <pre>
+// Example: Initialize FinTrack SDK
+const fintrack = new FinTrack({
+    apiKey: 'YOUR_API_KEY',
+    organization: 'YOUR_ORG_ID'
+});
+
+// Connect to your account
+await fintrack.connect();</pre>
+                        </div>
+                    </section>
+
+                    <!-- Dashboard -->
+                    <section id="dashboard">
+                        <h2>Dashboard Overview</h2>
+                        <p>The dashboard is your central hub for monitoring and managing your financial data.</p>
+
+                        <h3>Key Components</h3>
+                        <ul>
+                            <li>Financial Overview</li>
+                            <li>Budget Status</li>
+                            <li>Recent Transactions</li>
+                            <li>Performance Metrics</li>
+                        </ul>
+
+                        <div class="note-block">
+                            <h4><i class="fas fa-info-circle"></i> Note</h4>
+                            <p>You can customize your dashboard by dragging and dropping widgets to your preferred layout.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FinTrack</h3>
+                    <p>Smart budget management for modern businesses. Streamline your finances and make better decisions with our powerful tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FinTrack. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
