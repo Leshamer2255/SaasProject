@@ -3,212 +3,399 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradient Theme - FinTrack Demo</title>
+    <title>FinTrack - Gradient Theme</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/gradient.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <a href="../index.html">FinTrack</a>
-            </div>
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">FinTrack</a>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../documentation.html">Documentation</a></li>
+                <li><a href="../pricing.html">Pricing</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
             </ul>
-            <div class="nav-buttons">
-                <a href="#" class="btn btn-outline">Log in</a>
-                <a href="#" class="btn btn-primary">Get Started</a>
-            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Vibrant Financial Management</h1>
-                <p>Experience the power of modern finance with our gradient-themed platform</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">Start Free Trial</a>
-                    <a href="#" class="btn btn-outline">Watch Demo</a>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Beautiful Financial Management</h1>
+            <p>Experience the power of modern financial tools with stunning gradient designs. Track, analyze, and optimize your finances with style.</p>
+            <div class="hero-buttons">
+                <a href="#features" class="btn btn-primary">Get Started</a>
+                <a href="#demo" class="btn btn-outline">View Demo</a>
             </div>
-            <div class="hero-image">
-                <img src="../images/dashboard-preview.png" alt="FinTrack Dashboard">
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Active Users</span>
             </div>
-        </section>
+            <div class="stat-card">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Satisfaction</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Support</span>
+            </div>
+        </div>
+    </section>
 
-        <section id="features" class="features">
-            <h2>Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Real-time Analytics</h3>
-                    <p>Track your financial metrics in real-time with beautiful visualizations</p>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="features-container">
+            <div class="features-header">
+                <h2>Powerful Features</h2>
+                <p>Everything you need to manage your finances effectively</p>
+            </div>
+            <div class="features-tabs">
+                <button class="tab-btn active" data-tab="analytics">Analytics</button>
+                <button class="tab-btn" data-tab="security">Security</button>
+                <button class="tab-btn" data-tab="automation">Automation</button>
+                <button class="tab-btn" data-tab="integration">Integration</button>
+            </div>
+            <div class="features-content">
+                <div id="analytics" class="tab-content active">
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line feature-icon"></i>
+                            <h3>Real-time Analytics</h3>
+                            <p>Track your financial metrics in real-time with beautiful visualizations and insights.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-pie feature-icon"></i>
+                            <h3>Custom Reports</h3>
+                            <p>Generate detailed reports with customizable metrics and beautiful charts.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-bar feature-icon"></i>
+                            <h3>Trend Analysis</h3>
+                            <p>Identify patterns and trends in your financial data with advanced analytics.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Secure Platform</h3>
-                    <p>Bank-level security to keep your financial data safe</p>
+                <div id="security" class="tab-content">
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt feature-icon"></i>
+                            <h3>Bank-level Security</h3>
+                            <p>Your data is protected with industry-leading encryption and security measures.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-fingerprint feature-icon"></i>
+                            <h3>Biometric Authentication</h3>
+                            <p>Secure access with fingerprint and face recognition technology.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-lock feature-icon"></i>
+                            <h3>Two-factor Authentication</h3>
+                            <p>Add an extra layer of security to your account with 2FA.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-sync"></i>
-                    <h3>Automated Reports</h3>
-                    <p>Generate comprehensive reports automatically</p>
+                <div id="automation" class="tab-content">
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-robot feature-icon"></i>
+                            <h3>Smart Automation</h3>
+                            <p>Automate repetitive tasks and workflows to save time and reduce errors.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-sync feature-icon"></i>
+                            <h3>Recurring Transactions</h3>
+                            <p>Set up automatic recurring transactions and payments.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-bell feature-icon"></i>
+                            <h3>Smart Notifications</h3>
+                            <p>Receive intelligent alerts and notifications based on your preferences.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="integration" class="tab-content">
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-plug feature-icon"></i>
+                            <h3>API Access</h3>
+                            <p>Integrate with your favorite tools and services through our robust API.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-exchange-alt feature-icon"></i>
+                            <h3>Data Import/Export</h3>
+                            <p>Easily import and export your data in various formats.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-code feature-icon"></i>
+                            <h3>Custom Integrations</h3>
+                            <p>Build custom integrations with our developer-friendly tools.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="pricing" class="pricing">
-            <h2>Simple Pricing</h2>
-            <div class="pricing-toggle">
-                <span>Monthly</span>
-                <label class="switch">
-                    <input type="checkbox" id="billing-toggle">
-                    <span class="slider"></span>
-                </label>
-                <span>Yearly</span>
+    <!-- Dashboard Preview -->
+    <section id="demo" class="dashboard-preview">
+        <div class="preview-container">
+            <div class="preview-header">
+                <h2>Interactive Dashboard</h2>
+                <p>Experience our beautiful and functional interface</p>
             </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Basic</h3>
-                    <div class="price">
-                        <span class="amount">$29</span>
-                        <span class="period">/month</span>
-                    </div>
-                    <ul class="features-list">
-                        <li>Core Features</li>
-                        <li>Basic Analytics</li>
-                        <li>Email Support</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline">Get Started</a>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>Pro</h3>
-                    <div class="price">
-                        <span class="amount">$79</span>
-                        <span class="period">/month</span>
-                    </div>
-                    <ul class="features-list">
-                        <li>All Basic Features</li>
-                        <li>Advanced Analytics</li>
-                        <li>Priority Support</li>
-                        <li>Custom Reports</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Get Started</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">
-                        <span class="amount">$199</span>
-                        <span class="period">/month</span>
-                    </div>
-                    <ul class="features-list">
-                        <li>All Pro Features</li>
-                        <li>Dedicated Support</li>
-                        <li>Custom Integration</li>
-                        <li>Advanced Security</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline">Contact Sales</a>
-                </div>
+            <div class="preview-navigation">
+                <button class="preview-btn active" data-preview="overview">Overview</button>
+                <button class="preview-btn" data-preview="expenses">Expenses</button>
+                <button class="preview-btn" data-preview="budget">Budget</button>
+                <button class="preview-btn" data-preview="reports">Reports</button>
             </div>
-        </section>
+            <div class="preview-images">
+                <img id="overview" class="preview-image active" src="../images/dashboard-overview.png" alt="Dashboard Overview">
+                <img id="expenses" class="preview-image" src="../images/dashboard-expenses.png" alt="Expenses View">
+                <img id="budget" class="preview-image" src="../images/dashboard-budget.png" alt="Budget Planning">
+                <img id="reports" class="preview-image" src="../images/dashboard-reports.png" alt="Financial Reports">
+            </div>
+        </div>
+    </section>
 
-        <section id="testimonials" class="testimonials">
-            <h2>What Our Clients Say</h2>
+    <!-- Integrations -->
+    <section class="integrations">
+        <div class="integrations-container">
+            <div class="integrations-header">
+                <h2>Seamless Integrations</h2>
+                <p>Connect with your favorite tools and services</p>
+            </div>
+            <div class="integrations-grid">
+                <div class="integration-card">
+                    <img src="../images/quickbooks.png" alt="QuickBooks" class="integration-logo">
+                    <h3>QuickBooks</h3>
+                </div>
+                <div class="integration-card">
+                    <img src="../images/salesforce.png" alt="Salesforce" class="integration-logo">
+                    <h3>Salesforce</h3>
+                </div>
+                <div class="integration-card">
+                    <img src="../images/slack.png" alt="Slack" class="integration-logo">
+                    <h3>Slack</h3>
+                </div>
+                <div class="integration-card">
+                    <img src="../images/zapier.png" alt="Zapier" class="integration-logo">
+                    <h3>Zapier</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2>What Our Users Say</h2>
+                <p>Join thousands of satisfied customers</p>
+            </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"FinTrack's vibrant interface makes financial management a pleasure. The gradient design is both beautiful and functional."</p>
+                        <p>"The beautiful gradient design and powerful features make financial management a pleasure. I can't imagine using anything else."</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="../images/avatar1.jpg" alt="Sarah Johnson">
+                        <img src="../images/user1.jpg" alt="Sarah Johnson" class="author-avatar">
                         <div class="author-info">
                             <h4>Sarah Johnson</h4>
-                            <p>CFO, TechCorp</p>
+                            <p>Small Business Owner</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"The real-time analytics and automated reporting have saved us countless hours. Highly recommended!"</p>
+                        <p>"The stunning visuals and intuitive interface make it easy to stay on top of my finances. The gradient theme is absolutely beautiful."</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="../images/avatar2.jpg" alt="Michael Chen">
+                        <img src="../images/user2.jpg" alt="Michael Chen" class="author-avatar">
                         <div class="author-info">
                             <h4>Michael Chen</h4>
-                            <p>Finance Director, Innovate Inc</p>
+                            <p>Freelance Designer</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="contact">
-            <h2>Get in Touch</h2>
-            <div class="contact-grid">
-                <form class="contact-form">
+    <!-- Pricing Calculator -->
+    <section class="pricing-calculator">
+        <div class="calculator-container">
+            <div class="calculator-header">
+                <h2>Calculate Your Price</h2>
+                <p>Find the perfect plan for your needs</p>
+            </div>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="users">Number of Users</label>
+                    <input type="range" id="users" min="1" max="100" value="5">
+                    <span class="value-display" id="userValue">5</span>
+                </div>
+                <div class="form-group">
+                    <label for="storage">Storage (GB)</label>
+                    <input type="range" id="storage" min="10" max="1000" value="100">
+                    <span class="value-display" id="storageValue">100</span>
+                </div>
+                <div class="form-group">
+                    <div class="toggle-group">
+                        <input type="checkbox" id="yearly">
+                        <label for="yearly">Yearly Billing (20% discount)</label>
+                    </div>
+                </div>
+                <div class="total-price">
+                    Estimated Price: <span id="totalPrice">$50.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions</p>
+            </div>
+            <input type="text" class="faq-search" id="faqSearch" placeholder="Search questions...">
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How secure is my financial data?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use bank-level encryption and security measures to protect your data. All information is encrypted in transit and at rest, and we regularly undergo security audits to ensure the highest level of protection.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I import data from other financial tools?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we support importing data from various financial tools and formats, including CSV, Excel, and popular accounting software. Our import wizard makes the process simple and straightforward.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What kind of support do you offer?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer 24/7 email support, live chat during business hours, and a comprehensive knowledge base. Premium plans include priority support and dedicated account managers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p>Have questions? We're here to help</p>
+            </div>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>123 Business Street, Suite 100<br>New York, NY 10001</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+1 (555) 123-4567</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>contact@fintrack.com</p>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+                <div class="form-group">
+                    <label for="budget">Budget Range</label>
+                    <select id="budget" name="budget">
+                        <option value="">Select a range</option>
+                        <option value="0-100">$0 - $100</option>
+                        <option value="101-500">$101 - $500</option>
+                        <option value="501-1000">$501 - $1000</option>
+                        <option value="1000+">$1000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">I agree to the privacy policy</label>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
+        <div class="footer-container">
+            <div class="footer-column">
                 <h3>FinTrack</h3>
-                <p>Vibrant financial management for modern businesses</p>
+                <p>Beautiful and powerful financial management for everyone.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
                     <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
+            <div class="footer-column">
+                <h3>Product</h3>
+                <ul class="footer-links">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#integrations">Integrations</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#careers">Careers</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#cookies">Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -217,6 +404,7 @@
         </div>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script src="../js/gradient.js"></script>
 </body>
 </html> 

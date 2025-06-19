@@ -6,6 +6,7 @@
     <title>Modern Theme - FinTrack Demo</title>
     <link rel="stylesheet" href="../css/modern.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
 </head>
 <body>
     <header class="header">
@@ -28,6 +29,12 @@
 
     <main>
         <section class="hero">
+            <div class="video-background">
+                <video autoplay muted loop>
+                    <source src="../videos/hero-bg.mp4" type="video/mp4">
+                </video>
+                <div class="overlay"></div>
+            </div>
             <div class="hero-content">
                 <h1>Modern Financial Management</h1>
                 <p>Streamline your finances with our modern, intuitive platform</p>
@@ -35,35 +42,193 @@
                     <a href="#" class="btn btn-primary">Start Free Trial</a>
                     <a href="#" class="btn btn-outline">Watch Demo</a>
                 </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="number">10k+</span>
+                        <span class="label">Active Users</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">98%</span>
+                        <span class="label">Satisfaction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">24/7</span>
+                        <span class="label">Support</span>
+                    </div>
+                </div>
             </div>
             <div class="hero-image">
                 <img src="../images/dashboard-preview.png" alt="FinTrack Dashboard">
+                <div class="floating-card card-1">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Real-time Analytics</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-bell"></i>
+                    <span>Smart Notifications</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Bank-level Security</span>
+                </div>
             </div>
         </section>
 
         <section id="features" class="features">
             <h2>Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Real-time Analytics</h3>
-                    <p>Track your financial metrics in real-time with beautiful visualizations</p>
+            <div class="features-tabs">
+                <button class="tab-btn active" data-tab="analytics">Analytics</button>
+                <button class="tab-btn" data-tab="security">Security</button>
+                <button class="tab-btn" data-tab="automation">Automation</button>
+                <button class="tab-btn" data-tab="integration">Integration</button>
+            </div>
+            <div class="features-content">
+                <div class="tab-content active" id="analytics">
+                    <div class="feature-demo">
+                        <img src="../images/analytics-demo.png" alt="Analytics Demo">
+                        <div class="demo-controls">
+                            <button class="control-btn" data-view="daily">Daily</button>
+                            <button class="control-btn active" data-view="weekly">Weekly</button>
+                            <button class="control-btn" data-view="monthly">Monthly</button>
+                        </div>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Advanced Analytics</h3>
+                        <p>Get deep insights into your financial data with our powerful analytics tools.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Real-time data visualization</li>
+                            <li><i class="fas fa-check"></i> Custom report builder</li>
+                            <li><i class="fas fa-check"></i> Predictive analytics</li>
+                            <li><i class="fas fa-check"></i> Export to multiple formats</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Secure Platform</h3>
-                    <p>Bank-level security to keep your financial data safe</p>
+                <!-- Other tab contents will be added dynamically -->
+            </div>
+        </section>
+
+        <section class="dashboard-preview">
+            <h2>Experience the Dashboard</h2>
+            <div class="preview-container">
+                <div class="preview-nav">
+                    <button class="preview-btn active" data-view="overview">Overview</button>
+                    <button class="preview-btn" data-view="analytics">Analytics</button>
+                    <button class="preview-btn" data-view="reports">Reports</button>
+                    <button class="preview-btn" data-view="settings">Settings</button>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-sync"></i>
-                    <h3>Automated Reports</h3>
-                    <p>Generate comprehensive reports automatically</p>
+                <div class="preview-content">
+                    <img src="../images/dashboard-overview.png" alt="Dashboard Overview" class="preview-image active">
+                    <!-- Other preview images will be added dynamically -->
+                </div>
+                <div class="preview-features">
+                    <div class="feature">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Real-time Updates</h4>
+                        <p>See your data update in real-time</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>Mobile Responsive</h4>
+                        <p>Access from any device</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-cog"></i>
+                        <h4>Customizable</h4>
+                        <p>Tailor to your needs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="integrations">
+            <h2>Seamless Integrations</h2>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <img src="../images/integrations/quickbooks.png" alt="QuickBooks">
+                    <h4>QuickBooks</h4>
+                    <p>Sync your accounting data automatically</p>
+                </div>
+                <div class="integration-card">
+                    <img src="../images/integrations/salesforce.png" alt="Salesforce">
+                    <h4>Salesforce</h4>
+                    <p>Connect your CRM data</p>
+                </div>
+                <div class="integration-card">
+                    <img src="../images/integrations/slack.png" alt="Slack">
+                    <h4>Slack</h4>
+                    <p>Get instant notifications</p>
+                </div>
+                <div class="integration-card">
+                    <img src="../images/integrations/zapier.png" alt="Zapier">
+                    <h4>Zapier</h4>
+                    <p>Connect with 3000+ apps</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-video">
+                    <video controls poster="../images/testimonial-thumbnail.jpg">
+                        <source src="../videos/client-testimonial.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"FinTrack has transformed how we manage our finances. The modern interface and powerful features make it a pleasure to use."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="../images/avatar1.jpg" alt="Sarah Johnson">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CFO, TechCorp</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The real-time analytics and automated reporting have saved us countless hours. Highly recommended!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="../images/avatar2.jpg" alt="Michael Chen">
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Finance Director, Innovate Inc</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="pricing" class="pricing">
             <h2>Simple Pricing</h2>
+            <div class="pricing-calculator">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="users">Number of Users</label>
+                        <input type="range" id="users" min="1" max="100" value="5">
+                        <span class="value">5</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="storage">Storage (GB)</label>
+                        <input type="range" id="storage" min="10" max="1000" value="100">
+                        <span class="value">100</span>
+                    </div>
+                </div>
+                <div class="calculator-result">
+                    <div class="result-card">
+                        <h3>Estimated Cost</h3>
+                        <div class="price">
+                            <span class="amount">$299</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Save 20% with annual billing</p>
+                    </div>
+                </div>
+            </div>
             <div class="pricing-toggle">
                 <span>Monthly</span>
                 <label class="switch">
@@ -117,39 +282,31 @@
             </div>
         </section>
 
-        <section id="testimonials" class="testimonials">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"FinTrack has transformed how we manage our finances. The modern interface and powerful features make it a pleasure to use."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="../images/avatar1.jpg" alt="Sarah Johnson">
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>CFO, TechCorp</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"The real-time analytics and automated reporting have saved us countless hours. Highly recommended!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="../images/avatar2.jpg" alt="Michael Chen">
-                        <div class="author-info">
-                            <h4>Michael Chen</h4>
-                            <p>Finance Director, Innovate Inc</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="contact" class="contact">
             <h2>Get in Touch</h2>
             <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Visit Us</h4>
+                        <p>123 Business Street, Suite 100<br>New York, NY 10001</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Call Us</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email Us</h4>
+                        <p>contact@fintrack.com</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Business Hours</h4>
+                        <p>Mon-Fri: 9:00 AM - 6:00 PM<br>Sat-Sun: Closed</p>
+                    </div>
+                </div>
                 <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -160,25 +317,50 @@
                         <input type="email" id="email" required>
                     </div>
                     <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget">
+                            <option value="">Select Range</option>
+                            <option value="0-1000">$0 - $1,000</option>
+                            <option value="1000-5000">$1,000 - $5,000</option>
+                            <option value="5000+">$5,000+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" required></textarea>
                     </div>
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the privacy policy</span>
+                        </label>
+                    </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>123 Business Street, Suite 100<br>New York, NY 10001</p>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-search">
+                <input type="text" placeholder="Search questions...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does the free trial work?</h3>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+1 (555) 123-4567</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>contact@fintrack.com</p>
+                    <div class="faq-answer">
+                        <p>Our 14-day free trial gives you full access to all features. No credit card required to start. You can upgrade, downgrade, or cancel anytime.</p>
                     </div>
                 </div>
+                <!-- More FAQ items will be added dynamically -->
             </div>
         </section>
     </main>
@@ -217,6 +399,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="../js/modern.js"></script>
 </body>
 </html> 

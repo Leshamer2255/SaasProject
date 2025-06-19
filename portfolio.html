@@ -20,7 +20,7 @@
                     <li><a href="documentation.html">Documentation</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="nav-buttons">
@@ -37,74 +37,165 @@
     <!-- Portfolio Section -->
     <section class="portfolio-section">
         <div class="container">
-            <h1>Our Portfolio</h1>
-            <p>Explore our successful projects and implementations across various industries.</p>
+            <div class="portfolio-header">
+                <h1>Portfolio</h1>
+                <p>Discover how businesses are using FinTrack to transform their financial management.</p>
+            </div>
 
-            <!-- Portfolio Filters -->
+            <!-- Filter Buttons -->
             <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="finance">Finance</button>
                 <button class="filter-btn" data-filter="retail">Retail</button>
-                <button class="filter-btn" data-filter="technology">Technology</button>
+                <button class="filter-btn" data-filter="tech">Technology</button>
                 <button class="filter-btn" data-filter="healthcare">Healthcare</button>
             </div>
 
             <!-- Portfolio Grid -->
             <div class="portfolio-grid">
-                <!-- Project 1 -->
+                <!-- Finance Case Study -->
                 <div class="portfolio-item" data-category="finance">
                     <div class="portfolio-image">
-                        <img src="images/portfolio/finance-project.jpg" alt="Finance Project">
+                        <img src="images/portfolio/finance-case.jpg" alt="Finance Case Study">
                         <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Global Bank Integration</h3>
-                                <p>Financial Management System</p>
-                                <a href="#" class="btn btn-primary">View Details</a>
+                            <div class="portfolio-actions">
+                                <a href="#" class="btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Global Investment Bank</h3>
+                        <p>Streamlined financial operations with real-time analytics</p>
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <span class="stat-value">45%</span>
+                                <span class="stat-label">Cost Reduction</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">3x</span>
+                                <span class="stat-label">Efficiency</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Retail Case Study -->
                 <div class="portfolio-item" data-category="retail">
                     <div class="portfolio-image">
-                        <img src="images/portfolio/retail-project.jpg" alt="Retail Project">
+                        <img src="images/portfolio/retail-case.jpg" alt="Retail Case Study">
                         <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>E-commerce Analytics</h3>
-                                <p>Retail Performance Tracking</p>
-                                <a href="#" class="btn btn-primary">View Details</a>
+                            <div class="portfolio-actions">
+                                <a href="#" class="btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>E-commerce Giant</h3>
+                        <p>Automated inventory and financial management</p>
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <span class="stat-value">60%</span>
+                                <span class="stat-label">Time Saved</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">2.5x</span>
+                                <span class="stat-label">ROI</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="portfolio-item" data-category="technology">
+                <!-- Tech Case Study -->
+                <div class="portfolio-item" data-category="tech">
                     <div class="portfolio-image">
-                        <img src="images/portfolio/tech-project.jpg" alt="Technology Project">
+                        <img src="images/portfolio/tech-case.jpg" alt="Tech Case Study">
                         <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Cloud Migration</h3>
-                                <p>Enterprise Solutions</p>
-                                <a href="#" class="btn btn-primary">View Details</a>
+                            <div class="portfolio-actions">
+                                <a href="#" class="btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Tech Startup</h3>
+                        <p>Scalable financial infrastructure for growth</p>
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <span class="stat-value">80%</span>
+                                <span class="stat-label">Automation</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4x</span>
+                                <span class="stat-label">Growth</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 4 -->
+                <!-- Healthcare Case Study -->
                 <div class="portfolio-item" data-category="healthcare">
                     <div class="portfolio-image">
-                        <img src="images/portfolio/healthcare-project.jpg" alt="Healthcare Project">
+                        <img src="images/portfolio/healthcare-case.jpg" alt="Healthcare Case Study">
                         <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>Medical Billing System</h3>
-                                <p>Healthcare Finance Management</p>
-                                <a href="#" class="btn btn-primary">View Details</a>
+                            <div class="portfolio-actions">
+                                <a href="#" class="btn btn-primary">View Case Study</a>
                             </div>
                         </div>
                     </div>
+                    <div class="portfolio-info">
+                        <h3>Medical Center</h3>
+                        <p>Integrated billing and financial management</p>
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <span class="stat-value">70%</span>
+                                <span class="stat-label">Error Reduction</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">3x</span>
+                                <span class="stat-label">Efficiency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials-section">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"FinTrack has transformed how we manage our finances. The real-time analytics and automated reporting have saved us countless hours."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/testimonials/author1.jpg" alt="John Smith">
+                            <div class="author-info">
+                                <h4>John Smith</h4>
+                                <p>CFO, Global Investment Bank</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The integration capabilities are outstanding. We've connected all our systems seamlessly, creating a unified financial ecosystem."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/testimonials/author2.jpg" alt="Sarah Johnson">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Finance Director, Tech Startup</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h2>Ready to Transform Your Financial Management?</h2>
+                <p>Join thousands of businesses already using FinTrack to streamline their operations.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-outline">Schedule Demo</a>
                 </div>
             </div>
         </div>
@@ -153,6 +244,31 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/portfolio.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>
+        // Portfolio Filtering
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.dataset.filter;
+                
+                // Filter portfolio items
+                document.querySelectorAll('.portfolio-item').forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html> 

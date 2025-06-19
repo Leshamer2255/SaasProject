@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/documentation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add Prism.js for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <!-- Add search functionality -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -17,8 +21,9 @@
                 <a href="index.html" class="logo">FinTrack</a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="documentation.html" class="active">Documentation</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -36,28 +41,50 @@
     <!-- Documentation Section -->
     <section class="documentation-section">
         <div class="container">
-            <h1>Documentation</h1>
-            <p>Everything you need to know about using FinTrack effectively. From getting started to advanced features.</p>
+            <div class="docs-header">
+                <h1>Documentation</h1>
+                <p>Everything you need to know about using FinTrack effectively. From getting started to advanced features.</p>
+                <!-- Add search box -->
+                <div class="docs-search">
+                    <input type="search" id="docsearch" placeholder="Search documentation...">
+                </div>
+            </div>
 
             <div class="docs-grid">
                 <!-- Sidebar -->
                 <div class="docs-sidebar">
                     <div class="docs-nav">
+                        <div class="version-selector">
+                            <select id="version-select">
+                                <option value="latest">Latest Version (2.0)</option>
+                                <option value="1.9">Version 1.9</option>
+                                <option value="1.8">Version 1.8</option>
+                            </select>
+                        </div>
+                        
                         <h3>Getting Started</h3>
                         <a href="#introduction" class="active"><i class="fas fa-book"></i> Introduction</a>
                         <a href="#installation"><i class="fas fa-download"></i> Installation</a>
                         <a href="#quick-start"><i class="fas fa-rocket"></i> Quick Start</a>
+                        <a href="#requirements"><i class="fas fa-list-check"></i> Requirements</a>
 
                         <h3>Core Features</h3>
                         <a href="#dashboard"><i class="fas fa-chart-line"></i> Dashboard</a>
                         <a href="#budgeting"><i class="fas fa-wallet"></i> Budgeting</a>
                         <a href="#reports"><i class="fas fa-file-alt"></i> Reports</a>
                         <a href="#analytics"><i class="fas fa-chart-bar"></i> Analytics</a>
+                        <a href="#automation"><i class="fas fa-robot"></i> Automation</a>
 
                         <h3>Advanced</h3>
                         <a href="#api"><i class="fas fa-code"></i> API Reference</a>
                         <a href="#integrations"><i class="fas fa-plug"></i> Integrations</a>
                         <a href="#customization"><i class="fas fa-cog"></i> Customization</a>
+                        <a href="#security"><i class="fas fa-shield-alt"></i> Security</a>
+
+                        <h3>Resources</h3>
+                        <a href="#tutorials"><i class="fas fa-video"></i> Video Tutorials</a>
+                        <a href="#examples"><i class="fas fa-code"></i> Code Examples</a>
+                        <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
                     </div>
                 </div>
 
@@ -65,39 +92,79 @@
                 <div class="docs-content">
                     <!-- Introduction -->
                     <section id="introduction">
-                        <h2>Introduction to FinTrack</h2>
+                        <div class="section-header">
+                            <h2>Introduction to FinTrack</h2>
+                            <div class="section-actions">
+                                <button class="btn btn-sm btn-outline" onclick="window.print()">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="copySection('introduction')">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                        
                         <p>FinTrack is a powerful financial management platform designed to help businesses of all sizes streamline their budgeting, reporting, and analytics processes. This documentation will guide you through all the features and capabilities of FinTrack.</p>
                         
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Real-time Analytics</h4>
+                                <p>Get instant insights into your financial data</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-robot"></i>
+                                <h4>Automation</h4>
+                                <p>Automate repetitive financial tasks</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Security</h4>
+                                <p>Bank-level security for your data</p>
+                            </div>
+                        </div>
+
                         <div class="note-block">
                             <h4><i class="fas fa-lightbulb"></i> Pro Tip</h4>
                             <p>Make sure to check out our video tutorials for a more visual learning experience.</p>
                         </div>
 
                         <h3>Key Features</h3>
-                        <ul>
-                            <li>Real-time financial analytics and reporting</li>
-                            <li>Automated budget tracking and management</li>
-                            <li>Customizable dashboards and reports</li>
-                            <li>Integration with popular accounting software</li>
-                            <li>Advanced data visualization tools</li>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Real-time financial analytics and reporting</li>
+                            <li><i class="fas fa-check"></i> Automated budget tracking and management</li>
+                            <li><i class="fas fa-check"></i> Customizable dashboards and reports</li>
+                            <li><i class="fas fa-check"></i> Integration with popular accounting software</li>
+                            <li><i class="fas fa-check"></i> Advanced data visualization tools</li>
                         </ul>
                     </section>
 
                     <!-- Installation -->
                     <section id="installation">
-                        <h2>Installation Guide</h2>
+                        <div class="section-header">
+                            <h2>Installation Guide</h2>
+                            <div class="section-actions">
+                                <button class="btn btn-sm btn-outline" onclick="window.print()">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="copySection('installation')">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+
                         <p>Follow these steps to get FinTrack up and running on your system.</p>
 
-                        <h3>System Requirements</h3>
-                        <ul>
-                            <li>Modern web browser (Chrome, Firefox, Safari, Edge)</li>
-                            <li>Internet connection</li>
-                            <li>Valid FinTrack account</li>
-                        </ul>
-
-                        <h3>Installation Steps</h3>
-                        <div class="code-block">
-                            <pre>
+                        <div class="tabs">
+                            <div class="tab-header">
+                                <button class="tab-btn active" data-tab="npm">NPM</button>
+                                <button class="tab-btn" data-tab="yarn">Yarn</button>
+                                <button class="tab-btn" data-tab="manual">Manual</button>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="npm">
+                                    <div class="code-block">
+                                        <pre><code class="language-bash">
 # Install FinTrack CLI
 npm install -g fintrack-cli
 
@@ -105,10 +172,39 @@ npm install -g fintrack-cli
 fintrack init
 
 # Configure your settings
-fintrack config set api-key YOUR_API_KEY</pre>
+fintrack config set api-key YOUR_API_KEY</code></pre>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="yarn">
+                                    <div class="code-block">
+                                        <pre><code class="language-bash">
+# Install FinTrack CLI
+yarn global add fintrack-cli
+
+# Initialize your project
+fintrack init
+
+# Configure your settings
+fintrack config set api-key YOUR_API_KEY</code></pre>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="manual">
+                                    <div class="code-block">
+                                        <pre><code class="language-bash">
+# Download the latest release
+curl -O https://github.com/fintrack/cli/releases/latest/download/fintrack-cli
+
+# Make it executable
+chmod +x fintrack-cli
+
+# Move to your PATH
+sudo mv fintrack-cli /usr/local/bin/</code></pre>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="note-block">
+                        <div class="note-block warning">
                             <h4><i class="fas fa-exclamation-circle"></i> Important</h4>
                             <p>Make sure to keep your API key secure and never share it publicly.</p>
                         </div>
@@ -116,19 +212,53 @@ fintrack config set api-key YOUR_API_KEY</pre>
 
                     <!-- Quick Start -->
                     <section id="quick-start">
-                        <h2>Quick Start Guide</h2>
+                        <div class="section-header">
+                            <h2>Quick Start Guide</h2>
+                            <div class="section-actions">
+                                <button class="btn btn-sm btn-outline" onclick="window.print()">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="copySection('quick-start')">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+
                         <p>Get up and running with FinTrack in minutes.</p>
 
-                        <h3>Basic Setup</h3>
-                        <ol>
-                            <li>Create your account</li>
-                            <li>Set up your organization profile</li>
-                            <li>Connect your financial accounts</li>
-                            <li>Configure your dashboard</li>
-                        </ol>
+                        <div class="steps-container">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Create your account</h4>
+                                    <p>Sign up for a FinTrack account and verify your email address.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Set up your organization profile</h4>
+                                    <p>Configure your company details and preferences.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Connect your financial accounts</h4>
+                                    <p>Link your bank accounts and other financial services.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Configure your dashboard</h4>
+                                    <p>Customize your dashboard with the widgets you need.</p>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="code-block">
-                            <pre>
+                            <pre><code class="language-javascript">
 // Example: Initialize FinTrack SDK
 const fintrack = new FinTrack({
     apiKey: 'YOUR_API_KEY',
@@ -136,22 +266,60 @@ const fintrack = new FinTrack({
 });
 
 // Connect to your account
-await fintrack.connect();</pre>
+await fintrack.connect();
+
+// Set up event listeners
+fintrack.on('transaction', handleTransaction);
+fintrack.on('budget-alert', handleBudgetAlert);</code></pre>
                         </div>
                     </section>
 
                     <!-- Dashboard -->
                     <section id="dashboard">
-                        <h2>Dashboard Overview</h2>
+                        <div class="section-header">
+                            <h2>Dashboard Overview</h2>
+                            <div class="section-actions">
+                                <button class="btn btn-sm btn-outline" onclick="window.print()">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="copySection('dashboard')">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+
                         <p>The dashboard is your central hub for monitoring and managing your financial data.</p>
 
+                        <div class="dashboard-preview">
+                            <img src="images/dashboard-preview.png" alt="Dashboard Preview" class="img-responsive">
+                            <div class="preview-overlay">
+                                <button class="btn btn-primary">Try Live Demo</button>
+                            </div>
+                        </div>
+
                         <h3>Key Components</h3>
-                        <ul>
-                            <li>Financial Overview</li>
-                            <li>Budget Status</li>
-                            <li>Recent Transactions</li>
-                            <li>Performance Metrics</li>
-                        </ul>
+                        <div class="components-grid">
+                            <div class="component-card">
+                                <i class="fas fa-chart-pie"></i>
+                                <h4>Financial Overview</h4>
+                                <p>Get a quick snapshot of your financial health</p>
+                            </div>
+                            <div class="component-card">
+                                <i class="fas fa-wallet"></i>
+                                <h4>Budget Status</h4>
+                                <p>Track your spending against budgets</p>
+                            </div>
+                            <div class="component-card">
+                                <i class="fas fa-exchange-alt"></i>
+                                <h4>Recent Transactions</h4>
+                                <p>Monitor your latest financial activities</p>
+                            </div>
+                            <div class="component-card">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Performance Metrics</h4>
+                                <p>Analyze your financial performance</p>
+                            </div>
+                        </div>
 
                         <div class="note-block">
                             <h4><i class="fas fa-info-circle"></i> Note</h4>
@@ -177,6 +345,7 @@ await fintrack.connect();</pre>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="documentation.html">Documentation</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -205,6 +374,42 @@ await fintrack.connect();</pre>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-html.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script>
+        // Initialize docsearch
+        docsearch({
+            apiKey: 'YOUR_API_KEY',
+            indexName: 'fintrack',
+            inputSelector: '#docsearch',
+            debug: false
+        });
+
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.dataset.tab;
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Copy section functionality
+        function copySection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const text = section.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Section copied to clipboard!');
+            });
+        }
+    </script>
 </body>
 </html> 

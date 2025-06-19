@@ -206,4 +206,124 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Feature Tabs
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked button and corresponding content
+            button.classList.add('active');
+            const tabId = button.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+
+    // Dashboard Preview
+    const previewButtons = document.querySelectorAll('.preview-btn');
+    const previewImages = document.querySelectorAll('.preview-image');
+
+    previewButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and images
+            previewButtons.forEach(btn => btn.classList.remove('active'));
+            previewImages.forEach(img => img.classList.remove('active'));
+
+            // Add active class to clicked button and corresponding image
+            button.classList.add('active');
+            const view = button.getAttribute('data-view');
+            document.querySelector(`.preview-image[data-view="${view}"]`).classList.add('active');
+        });
+    });
+
+    // Pricing Calculator
+    const userInput = document.getElementById('users');
+    const storageInput = document.getElementById('storage');
+    const userValue = userInput.nextElementSibling;
+    const storageValue = storageInput.nextElementSibling;
+    const resultAmount = document.querySelector('.result-card .amount');
+
+    function updatePrice() {
+        const users = parseInt(userInput.value);
+        const storage = parseInt(storageInput.value);
+        
+        // Base price calculation
+        let basePrice = 29; // Basic plan price
+        let userPrice = users * 10; // $10 per user
+        let storagePrice = Math.floor(storage / 100) * 5; // $5 per 100GB
+        
+        let totalPrice = basePrice + userPrice + storagePrice;
+        
+        // Apply yearly discount if yearly billing is selected
+        if (document.getElementById('billing-toggle').checked) {
+            totalPrice = Math.floor(totalPrice * 0.8); // 20% discount
+        }
+        
+        resultAmount.textContent = `$${totalPrice}`;
+    }
+
+    userInput.addEventListener('input', () => {
+        userValue.textContent = userInput.value;
+        updatePrice();
+    });
+
+    storageInput.addEventListener('input', () => {
+        storageValue.textContent = storageInput.value;
+        updatePrice();
+    });
+
+    document.getElementById('billing-toggle').addEventListener('change', updatePrice);
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector('i');
+
+            // Toggle answer visibility
+            answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + 'px';
+            
+            // Toggle icon rotation
+            icon.style.transform = icon.style.transform === 'rotate(180deg)' ? 'rotate(0)' : 'rotate(180deg)';
+        });
+    });
+
+    // FAQ Search
+    const faqSearch = document.querySelector('.faq-search input');
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqSearch.addEventListener('input', () => {
+        const searchTerm = faqSearch.value.toLowerCase();
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+            const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
+
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+
+    // Floating Cards Animation
+    const floatingCards = document.querySelectorAll('.floating-card');
+    
+    floatingCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.animationPlayState = 'paused';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.animationPlayState = 'running';
+        });
+    });
 }); 
