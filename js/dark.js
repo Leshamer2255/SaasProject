@@ -279,42 +279,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Pricing Calculator
-    const userSlider = document.getElementById('users');
-    const storageSlider = document.getElementById('storage');
-    const yearlyToggle = document.getElementById('yearly');
-    const userValue = document.getElementById('userValue');
-    const storageValue = document.getElementById('storageValue');
-    const totalPrice = document.getElementById('totalPrice');
-
-    function updatePrice() {
-        const users = parseInt(userSlider.value);
-        const storage = parseInt(storageSlider.value);
-        const isYearly = yearlyToggle.checked;
-
-        // Base price calculation
-        let price = users * 10; // $10 per user
-        price += storage * 0.5; // $0.5 per GB
-
-        // Apply yearly discount if selected
-        if (isYearly) {
-            price = price * 0.8; // 20% discount
+    function initializePricingCalculator() {
+        const usersInput = document.getElementById('users');
+        const storageInput = document.getElementById('storage');
+        const usersValue = usersInput.nextElementSibling;
+        const storageValue = storageInput.nextElementSibling;
+        const resultAmount = document.querySelector('.calculator-result .amount');
+        const billingToggle = document.getElementById('billing-toggle');
+        
+        // Update range input values
+        function updateRangeValue(input, valueElement) {
+            valueElement.textContent = input.value;
+            calculatePrice();
         }
-
-        // Update display
-        totalPrice.textContent = `$${price.toFixed(2)}`;
+        
+        // Calculate price based on inputs
+        function calculatePrice() {
+            const users = parseInt(usersInput.value);
+            const storage = parseInt(storageInput.value);
+            const isYearly = billingToggle.checked;
+            
+            // Base price calculation
+            let basePrice = 29; // Basic plan price
+            
+            // Add cost for additional users
+            if (users > 1) {
+                basePrice += (users - 1) * 10;
+            }
+            
+            // Add cost for additional storage
+            if (storage > 5) {
+                basePrice += (storage - 5) * 0.5;
+            }
+            
+            // Apply yearly discount if selected
+            if (isYearly) {
+                basePrice = basePrice * 0.8; // 20% discount
+            }
+            
+            // Update price display
+            resultAmount.textContent = `$${Math.round(basePrice)}`;
+        }
+        
+        // Event listeners
+        usersInput.addEventListener('input', () => updateRangeValue(usersInput, usersValue));
+        storageInput.addEventListener('input', () => updateRangeValue(storageInput, storageValue));
+        billingToggle.addEventListener('change', calculatePrice);
+        
+        // Initialize calculator
+        calculatePrice();
     }
-
-    userSlider.addEventListener('input', () => {
-        userValue.textContent = userSlider.value;
-        updatePrice();
-    });
-
-    storageSlider.addEventListener('input', () => {
-        storageValue.textContent = storageSlider.value;
-        updatePrice();
-    });
-
-    yearlyToggle.addEventListener('change', updatePrice);
 
     // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
@@ -469,4 +483,247 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return isValid;
     }
+
+    // Enhanced Financial Card Animations
+    function initializeFinancialCards() {
+        const cards = document.querySelectorAll('.financial-card');
+        
+        cards.forEach(card => {
+            // Add 3D tilt effect
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+            });
+            
+            // Add ripple effect on click
+            card.addEventListener('click', (e) => {
+                const ripple = document.createElement('div');
+                ripple.className = 'ripple';
+                card.appendChild(ripple);
+                
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                setTimeout(() => ripple.remove(), 1000);
+            });
+        });
+    }
+
+    // Enhanced Budget Progress Animations
+    function initializeBudgetProgress() {
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        progressBars.forEach(bar => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetWidth = bar.dataset.progress;
+                        const currentWidth = 0;
+                        const duration = 1500;
+                        const startTime = performance.now();
+                        
+                        function animate(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            
+                            const width = currentWidth + (targetWidth - currentWidth) * progress;
+                            bar.style.width = `${width}%`;
+                            
+                            if (progress < 1) {
+                                requestAnimationFrame(animate);
+                            }
+                        }
+                        
+                        requestAnimationFrame(animate);
+                        observer.unobserve(bar);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(bar);
+        });
+    }
+
+    // Enhanced Transaction List Animations
+    function initializeTransactionList() {
+        const transactionList = document.querySelector('.transaction-list');
+        if (!transactionList) return;
+        
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const transactions = document.querySelectorAll('.transaction-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.textContent.toLowerCase();
+                
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                transactions.forEach(transaction => {
+                    const type = transaction.dataset.type;
+                    if (filter === 'all' || type === filter) {
+                        transaction.style.display = 'flex';
+                        transaction.style.animation = 'slideIn 0.5s ease forwards';
+                    } else {
+                        transaction.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Enhanced hover effects
+        transactions.forEach(transaction => {
+            transaction.addEventListener('mouseenter', () => {
+                const icon = transaction.querySelector('.transaction-icon');
+                const amount = transaction.querySelector('.transaction-amount');
+                
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+                amount.style.transform = 'scale(1.1)';
+            });
+            
+            transaction.addEventListener('mouseleave', () => {
+                const icon = transaction.querySelector('.transaction-icon');
+                const amount = transaction.querySelector('.transaction-amount');
+                
+                icon.style.transform = 'scale(1) rotate(0)';
+                amount.style.transform = 'scale(1)';
+            });
+        });
+    }
+
+    // Enhanced Chart Animations
+    function initializeCharts() {
+        const charts = document.querySelectorAll('.chart-container');
+        
+        charts.forEach(chart => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        chart.classList.add('animate');
+                        
+                        // Add hover effect for chart data points
+                        const dataPoints = chart.querySelectorAll('.chart-point');
+                        dataPoints.forEach((point, index) => {
+                            point.style.animationDelay = `${index * 0.1}s`;
+                        });
+                        
+                        observer.unobserve(chart);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(chart);
+        });
+    }
+
+    // Add CSS for new animations
+    const style = document.createElement('style');
+    style.textContent = `
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple 1s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        .chart-point {
+            transition: all 0.3s ease;
+        }
+        
+        .chart-point:hover {
+            transform: scale(1.5);
+            filter: brightness(1.2);
+        }
+        
+        .transaction-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .transaction-icon {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .transaction-amount {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    `;
+
+    document.head.appendChild(style);
+
+    // Initialize all enhanced components
+    initializeFinancialCards();
+    initializeBudgetProgress();
+    initializeTransactionList();
+    initializeCharts();
+
+    // FAQ Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    const faqSearch = document.querySelector('.faq-search input');
+
+    // Toggle FAQ items
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            faqItems.forEach(faqItem => {
+                faqItem.classList.remove('active');
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // FAQ Search functionality
+    faqSearch.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('h3').textContent.toLowerCase();
+            const answer = item.querySelector('p').textContent.toLowerCase();
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+
+    // Initialize all components
+    initializePricingCalculator();
+    initializeTransactionList();
+    initializeCharts();
+    initializeFAQ();
 }); 

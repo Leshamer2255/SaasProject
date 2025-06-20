@@ -1,0 +1,44 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chart-bg-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="chart-line-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="#111827" rx="12"/>
+  
+  <!-- Chart Area -->
+  <rect x="50" y="50" width="500" height="300" fill="url(#chart-bg-dark)" rx="8"/>
+  
+  <!-- Chart Grid Lines -->
+  <line x1="50" y1="100" x2="550" y2="100" stroke="#374151" stroke-width="1"/>
+  <line x1="50" y1="150" x2="550" y2="150" stroke="#374151" stroke-width="1"/>
+  <line x1="50" y1="200" x2="550" y2="200" stroke="#374151" stroke-width="1"/>
+  <line x1="50" y1="250" x2="550" y2="250" stroke="#374151" stroke-width="1"/>
+  <line x1="50" y1="300" x2="550" y2="300" stroke="#374151" stroke-width="1"/>
+  
+  <!-- Chart Line -->
+  <path d="M 100 280 L 150 250 L 200 220 L 250 180 L 300 200 L 350 150 L 400 120 L 450 140 L 500 100" 
+        stroke="url(#chart-line-dark)" stroke-width="3" fill="none"/>
+  
+  <!-- Data Points -->
+  <circle cx="100" cy="280" r="4" fill="url(#chart-line-dark)"/>
+  <circle cx="150" cy="250" r="4" fill="url(#chart-line-dark)"/>
+  <circle cx="200" cy="220" r="4" fill="url(#chart-line-dark)"/>
+  <circle cx="250" cy="180" r="4" fill="url(#chart-line-dark)"/>
+  <circle cx="300" cy="200" r="4" fill="url(#chart-line-dark)"/>
+  <circle cx="350" cy="150" r="4" fill="url(#chart-line-dark)"/>
+  <circle cx="400" cy="120" r="4" fill="url(#chart-line-dark)"/>
+  <circle cx="450" cy="140" r="4" fill="url(#chart-line-dark)"/>
+  <circle cx="500" cy="100" r="4" fill="url(#chart-line-dark)"/>
+  
+  <!-- Labels -->
+  <text x="300" y="380" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#9ca3af">Time Period</text>
+  <text x="30" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#9ca3af" transform="rotate(-90, 30, 200)">Revenue ($)</text>
+</svg> 

@@ -31,7 +31,7 @@
         <section class="hero">
             <div class="video-background">
                 <video autoplay muted loop>
-                    <source src="../videos/hero-bg.mp4" type="video/mp4">
+                    <source src="../videos/placeholder.html" type="text/html">
                 </video>
                 <div class="overlay"></div>
             </div>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="../images/dashboard-preview.png" alt="FinTrack Dashboard">
+                <img src="../images/dashboard-preview.svg" alt="FinTrack Dashboard">
                 <div class="floating-card card-1">
                     <i class="fas fa-chart-pie"></i>
                     <span>Real-time Analytics</span>
@@ -85,7 +85,7 @@
             <div class="features-content">
                 <div class="tab-content active" id="analytics">
                     <div class="feature-demo">
-                        <img src="../images/analytics-demo.png" alt="Analytics Demo">
+                        <img src="../images/analytics-demo.svg" alt="Analytics Demo">
                         <div class="demo-controls">
                             <button class="control-btn" data-view="daily">Daily</button>
                             <button class="control-btn active" data-view="weekly">Weekly</button>
@@ -103,7 +103,69 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Other tab contents will be added dynamically -->
+                
+                <div class="tab-content" id="security">
+                    <div class="feature-demo">
+                        <img src="../images/analytics-demo.svg" alt="Security Demo">
+                        <div class="demo-controls">
+                            <button class="control-btn active" data-view="encryption">Encryption</button>
+                            <button class="control-btn" data-view="authentication">Authentication</button>
+                            <button class="control-btn" data-view="compliance">Compliance</button>
+                        </div>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Bank-Level Security</h3>
+                        <p>Your data is protected with enterprise-grade security measures.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> 256-bit AES encryption</li>
+                            <li><i class="fas fa-check"></i> Two-factor authentication</li>
+                            <li><i class="fas fa-check"></i> SOC 2 Type II compliance</li>
+                            <li><i class="fas fa-check"></i> Regular security audits</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="automation">
+                    <div class="feature-demo">
+                        <img src="../images/analytics-demo.svg" alt="Automation Demo">
+                        <div class="demo-controls">
+                            <button class="control-btn active" data-view="workflows">Workflows</button>
+                            <button class="control-btn" data-view="scheduling">Scheduling</button>
+                            <button class="control-btn" data-view="triggers">Triggers</button>
+                        </div>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Smart Automation</h3>
+                        <p>Automate repetitive tasks and streamline your financial workflows.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Automated expense categorization</li>
+                            <li><i class="fas fa-check"></i> Recurring transaction setup</li>
+                            <li><i class="fas fa-check"></i> Smart budget alerts</li>
+                            <li><i class="fas fa-check"></i> Automated reporting</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="integration">
+                    <div class="feature-demo">
+                        <img src="../images/analytics-demo.svg" alt="Integration Demo">
+                        <div class="demo-controls">
+                            <button class="control-btn active" data-view="apis">APIs</button>
+                            <button class="control-btn" data-view="webhooks">Webhooks</button>
+                            <button class="control-btn" data-view="connectors">Connectors</button>
+                        </div>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Seamless Integrations</h3>
+                        <p>Connect with your favorite tools and services effortlessly.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> 100+ pre-built integrations</li>
+                            <li><i class="fas fa-check"></i> RESTful API access</li>
+                            <li><i class="fas fa-check"></i> Webhook support</li>
+                            <li><i class="fas fa-check"></i> Custom connector builder</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -170,8 +232,8 @@
             <h2>What Our Clients Say</h2>
             <div class="testimonials-container">
                 <div class="testimonial-video">
-                    <video controls poster="../images/testimonial-thumbnail.jpg">
-                        <source src="../videos/client-testimonial.mp4" type="video/mp4">
+                    <video controls poster="../images/avatar1.svg">
+                        <source src="../videos/placeholder.html" type="text/html">
                     </video>
                 </div>
                 <div class="testimonials-grid">
@@ -180,7 +242,7 @@
                             <p>"FinTrack has transformed how we manage our finances. The modern interface and powerful features make it a pleasure to use."</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="../images/avatar1.jpg" alt="Sarah Johnson">
+                            <img src="../images/avatar1.svg" alt="Sarah Johnson">
                             <div class="author-info">
                                 <h4>Sarah Johnson</h4>
                                 <p>CFO, TechCorp</p>
@@ -192,7 +254,7 @@
                             <p>"The real-time analytics and automated reporting have saved us countless hours. Highly recommended!"</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="../images/avatar2.jpg" alt="Michael Chen">
+                            <img src="../images/avatar2.svg" alt="Michael Chen">
                             <div class="author-info">
                                 <h4>Michael Chen</h4>
                                 <p>Finance Director, Innovate Inc</p>
@@ -401,5 +463,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="../js/modern.js"></script>
+    <script src="../js/tabs.js"></script>
 </body>
 </html> 
